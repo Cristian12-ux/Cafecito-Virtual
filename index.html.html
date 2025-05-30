@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Café Virtual</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f3ea;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #7c5e3c;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        nav {
+            background: #e0d3c2;
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+        nav a {
+            color: #7c5e3c;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #a67c52;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 2rem;
+        }
+        h1, h2 {
+            margin-top: 0;
+        }
+        .destacados {
+            background: #f3e9d2;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .destacados h2 {
+            margin-top: 0;
+            color: #7c5e3c;
+        }
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .item {
+            background: #f9f6f1;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            padding: 1rem;
+            width: 180px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .item:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 4px 12px rgba(124,94,60,0.10);
+        }
+        .item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #e0d3c2;
+            color: #7c5e3c;
+            margin-top: 2rem;
+        }
+        .link-section {
+            background: #f3e9d2;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .link-input {
+            width: 70%;
+            padding: 0.5rem;
+            border: 1px solid #d1bfa3;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-right: 0.5rem;
+        }
+        .copy-btn {
+            background: #7c5e3c;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .copy-btn:hover {
+            background: #a67c52;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Café Virtual</h1>
+        <p>¡Bienvenido a tu cafetería en línea favorita!</p>
+    </header>
+    <nav>
+        <a href="#menu">Menú</a>
+        <a href="#destacados">Destacados</a>
+        <a href="#snacks">Snacks</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+    <main>
+        <section class="link-section" id="link-principal">
+            <h2>Enlace principal de Café Virtual</h2>
+            <input class="link-input" id="mainLink" type="text" readonly value="https://cafevirtual.com">
+            <button class="copy-btn" onclick="copiarMainLink()">Copiar enlace</button>
+            <div id="mainCopyMsg" style="color:#7c5e3c; margin-top:0.5rem; font-size:0.95em;"></div>
+        </section>
+        <section class="destacados" id="destacados">
+            <h2>☕ Destacados de la Semana</h2>
+            <p><strong>Mocha Frappé</strong> y <strong>Brownie de Chocolate</strong> a precio especial. ¡No te los pierdas!</p>
+        </section>
+        <h2 id="menu">Nuestro Menú</h2>
+        <div class="menu">
+            <!-- Bebidas de café -->
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Café Espresso">
+                <h3>Espresso</h3>
+                <p>Un clásico italiano, intenso y aromático.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=400&q=80" alt="Café Latte">
+                <h3>Latte</h3>
+                <p>Café suave con leche cremosa y espuma.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Café Capuchino">
+                <h3>Capuchino</h3>
+                <p>Perfecto equilibrio entre café, leche y espuma.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="Té Chai">
+                <h3>Té Chai</h3>
+                <p>Mezcla de té negro y especias aromáticas.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Mocha Frappé">
+                <h3>Mocha Frappé</h3>
+                <p>Café frío con chocolate y crema batida.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Americano">
+                <h3>Americano</h3>
+                <p>Café suave, ideal para cualquier momento.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" alt="Chocolate Caliente">
+                <h3>Chocolate Caliente</h3>
+                <p>Chocolate cremoso y caliente, perfecto para días fríos.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Matcha Latte">
+                <h3>Matcha Latte</h3>
+                <p>Bebida japonesa de té verde con leche.</p>
+            </div>
+        </div>
+        <h2 id="snacks" style="margin-top:2.5rem;">Snacks y Postres</h2>
+        <div class="menu">
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Croissant">
+                <h3>Croissant</h3>
+                <p>Hojaldre francés, suave y mantecoso.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Brownie">
+                <h3>Brownie</h3>
+                <p>Brownie de chocolate con nueces.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Cheesecake">
+                <h3>Cheesecake</h3>
+                <p>Pastel de queso cremoso con base de galleta.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Galletas">
+                <h3>Galletas</h3>
+                <p>Galletas caseras de chispas de chocolate.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" alt="Muffin de Arándanos">
+                <h3>Muffin de Arándanos</h3>
+                <p>Esponjoso y lleno de arándanos frescos.</p>
+            </div>
+        </div>
+        <section id="contacto" style="margin-top:2.5rem;">
+            <h2>Contacto</h2>
+            <p>¿Tienes dudas o sugerencias? Escríbenos a <a href="mailto:info@cafevirtual.com">info@cafevirtual.com</a></p>
+        </section>
+        <section class="link-section" id="link-propio">
+            <h2>Comparte tu link de Café Virtual</h2>
+            <a href="link.html">
+                <button class="copy-btn">Ver mi link</button>
+            </a>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 Café Virtual. Todos los derechos reservados.
+    </footer>
+    <script>
+        function copiarMainLink() {
+            var copyText = document.getElementById("mainLink");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+            document.getElementById("mainCopyMsg").innerText = "¡Enlace copiado!";
+            setTimeout(function() {
+                document.getElementById("mainCopyMsg").innerText = "";
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
